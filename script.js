@@ -89,7 +89,7 @@ function displayCar(car) {
 var carToSell = makeCar();
 displayCar(carToSell);*/
 
-var fiat = {
+/*var fiat = {
     make: "Fiat",
     model: "500",
     year: 1957,
@@ -116,6 +116,37 @@ var fiat = {
 
     }
 };
+fiat.drive();
+fiat.start();
+fiat.drive();
+fiat.stop();*/
+
+var fiat = {
+    make: "Fiat",
+    model: "500",
+    started: false,
+    fuel: 0,
+
+    start: function () {
+        this.started = true;
+    },
+
+    stop: function () {
+        this.started = false;
+    },
+
+    drive: function () {
+        if(this.started) {
+            alert(this.make + " " + this.model + "goes zoom zoom!");
+        } else {
+            alert("You need to start the engine first.");
+        }
+    },
+    addFuel: function (amount) {
+        this.fuel = this.fuel + amount;
+    }
+};
+
 fiat.drive();
 fiat.start();
 fiat.drive();
